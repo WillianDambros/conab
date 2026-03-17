@@ -21,10 +21,6 @@ arquivo <- arquivo |>
     producao_t = producao_mil_t * 1000
   )
 
-?stringr::str_trim()
-arquivo |> dplyr::glimpse()
-arquivo$id_levantamento |> unique()
-
 arquivo <- arquivo |>
   dplyr::mutate(n_levantamento = as.integer(stringr::str_trim(id_levantamento)),
                 mes = dplyr::case_when(
