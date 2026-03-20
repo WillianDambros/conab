@@ -35,7 +35,8 @@ arquivo <- arquivo |>
                   n_levantamento == 9  ~ 6,
                   n_levantamento == 10 ~ 7,
                   n_levantamento == 11 ~ 8,
-                  n_levantamento == 12 ~ 9
+                  n_levantamento == 12 ~ 9,
+                  n_levantamento == 99 ~ 1     # para criar data vai ter que inflacionar um mês
                 ),
                 ano_levantamento = ifelse(n_levantamento <= 3,
                                           lubridate::year(ano_referencia) - 1,
